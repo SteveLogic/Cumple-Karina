@@ -11,32 +11,36 @@
 
     body {
       margin: 0;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       font-family: 'Courier New', monospace;
-      background: linear-gradient(to bottom, #5c94fc 0%, #87ceeb 70%, #cfefff 100%);
+      background: linear-gradient(to bottom, #87cefa 0%, #bde9ff 60%, #eaf9ff 100%);
       color: white;
       text-align: center;
-      height: 100vh;
+      min-height: 100vh;
       position: relative;
     }
 
     h1 {
       font-size: 52px;
-      margin-top: 70px;
+      margin-top: 40px;
+      margin-bottom: 10px;
       text-shadow: 4px 4px #000;
       position: relative;
       z-index: 5;
+      padding: 0 16px;
     }
 
     .box {
-      margin: 30px auto 0;
-      background: rgba(0, 0, 0, 0.35);
+      margin: 20px auto 0;
+      background: rgba(0, 0, 0, 0.28);
       padding: 24px;
       border-radius: 18px;
       display: inline-block;
       position: relative;
       z-index: 5;
-      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+      box-shadow: 0 0 20px rgba(0,0,0,0.18);
+      max-width: 90%;
     }
 
     p {
@@ -64,23 +68,24 @@
 
     .cloud {
       position: absolute;
-      width: 140px;
-      opacity: 0.95;
+      width: 130px;
+      opacity: 0.98;
       z-index: 1;
+      image-rendering: pixelated;
     }
 
     .cloud1 {
       top: 40px;
-      left: 60px;
+      left: 30px;
     }
 
     .cloud2 {
-      top: 100px;
-      right: 100px;
+      top: 90px;
+      right: 40px;
     }
 
     .cloud3 {
-      top: 180px;
+      top: 170px;
       left: 30%;
     }
 
@@ -108,7 +113,7 @@
     }
 
     .m1 {
-      left: 40px;
+      left: 30px;
     }
 
     .m2 {
@@ -117,8 +122,8 @@
     }
 
     .m3 {
-      right: 120px;
-      transform: scale(1.1);
+      right: 90px;
+      transform: scale(1.05);
     }
 
     .hill {
@@ -133,17 +138,17 @@
     }
 
     .hill1 {
-      left: 80px;
+      left: 70px;
     }
 
     .hill2 {
-      left: 360px;
+      left: 330px;
       width: 260px;
       height: 160px;
     }
 
     .hill3 {
-      right: 120px;
+      right: 90px;
     }
 
     .ground {
@@ -174,38 +179,40 @@
 
     .block1 {
       top: 220px;
-      left: 180px;
+      left: 140px;
     }
 
     .block2 {
       top: 220px;
-      left: 245px;
+      left: 205px;
     }
 
     .block3 {
       top: 220px;
-      left: 310px;
+      left: 270px;
     }
 
     .block4 {
-      top: 180px;
-      right: 240px;
+      top: 190px;
+      right: 180px;
     }
 
     .mario {
       position: absolute;
       bottom: 95px;
-      right: 120px;
+      right: 90px;
       width: 110px;
-      z-index: 4;
+      z-index: 5;
+      image-rendering: pixelated;
     }
 
     .yoshi {
       position: absolute;
-      bottom: 95px;
-      left: 110px;
-      width: 130px;
-      z-index: 4;
+      bottom: 108px;
+      left: 70px;
+      width: 120px;
+      z-index: 6;
+      image-rendering: pixelated;
     }
 
     .tree {
@@ -230,49 +237,165 @@
     }
 
     .tree1 {
-      left: 620px;
+      left: 560px;
     }
 
     .tree2 {
-      right: 340px;
+      right: 300px;
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 34px;
-        margin-top: 50px;
-        padding: 0 10px;
+      body {
+        min-height: 100svh;
       }
 
-      p {
-        font-size: 18px;
+      h1 {
+        font-size: 28px;
+        margin-top: 24px;
+        line-height: 1.25;
+        padding: 0 12px;
       }
 
       .box {
-        width: 90%;
+        width: calc(100% - 24px);
+        max-width: 420px;
+        padding: 16px 14px;
+        margin-top: 18px;
       }
 
-      .mario {
-        width: 80px;
-        right: 20px;
+      p {
+        font-size: 16px;
+        line-height: 1.5;
       }
 
-      .yoshi {
-        width: 95px;
-        left: 20px;
+      .btn {
+        font-size: 16px;
+        padding: 10px 16px;
       }
 
-      .block1, .block2, .block3 {
-        top: 260px;
+      .cloud {
+        width: 88px;
+      }
+
+      .cloud1 {
+        top: 55px;
+        left: 8px;
+      }
+
+      .cloud2 {
+        top: 90px;
+        right: 10px;
+      }
+
+      .cloud3 {
+        top: 180px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .block {
+        width: 42px;
+        height: 42px;
+      }
+
+      .block1 {
+        top: 210px;
+        left: 18px;
+      }
+
+      .block2 {
+        top: 210px;
+        left: 64px;
+      }
+
+      .block3 {
+        top: 210px;
+        left: 110px;
       }
 
       .block4 {
         top: 210px;
-        right: 40px;
+        right: 16px;
       }
 
-      .m2, .m3, .tree2 {
+      .mario {
+        width: 78px;
+        right: 12px;
+        bottom: 95px;
+      }
+
+      .yoshi {
+        width: 82px;
+        left: 12px;
+        bottom: 108px;
+      }
+
+      .hill1 {
+        left: -10px;
+        width: 160px;
+        height: 100px;
+      }
+
+      .hill2 {
+        left: 95px;
+        width: 180px;
+        height: 115px;
+      }
+
+      .hill3 {
+        right: -20px;
+        width: 150px;
+        height: 95px;
+      }
+
+      .mountain {
+        border-left: 95px solid transparent;
+        border-right: 95px solid transparent;
+        border-bottom: 170px solid #8b5a2b;
+        bottom: 95px;
+      }
+
+      .mountain::after {
+        left: -95px;
+        top: 18px;
+        border-left: 95px solid transparent;
+        border-right: 95px solid transparent;
+        border-bottom: 150px solid #a86f3d;
+      }
+
+      .m1 {
+        left: -15px;
+      }
+
+      .m2 {
+        left: 75px;
+        transform: scale(0.9);
+      }
+
+      .m3 {
+        right: -10px;
+        transform: scale(0.95);
+      }
+
+      .tree1 {
+        left: 210px;
+      }
+
+      .tree2 {
         display: none;
+      }
+
+      .tree {
+        width: 20px;
+        height: 72px;
+        bottom: 95px;
+      }
+
+      .tree::before {
+        left: -25px;
+        width: 70px;
+        height: 70px;
+        bottom: 42px;
       }
     }
   </style>
@@ -309,7 +432,7 @@
     </button>
   </div>
 
-  <img src="yoshi2.png" class="yoshi" alt="Yoshi">
+  <img src="yoshi2.png?v=2" class="yoshi" alt="Yoshi">
   <img src="mario.png" class="mario" alt="Mario">
 
   <div class="ground"></div>
